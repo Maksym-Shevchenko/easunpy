@@ -71,7 +71,7 @@ else
 fi
 
 # Build command with optional parameters
-CMD="python3 -m easunpy"
+CMD="python3.10 -m easunpy"
 if [ -n "$INVERTER_IP" ]; then
     CMD="$CMD --inverter-ip $INVERTER_IP"
 fi

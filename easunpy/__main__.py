@@ -264,7 +264,7 @@ async def main():
     parser.add_argument('--interval', type=int, default=5, help='Update interval in seconds (default: 5)')
     parser.add_argument('--continuous', action='store_true', help='Show continuous dashboard view (default: False)')
     parser.add_argument('--debug', action='store_true', help='Enable debug logging')
-    parser.add_argument('--model', choices=list(MODEL_CONFIGS.keys()), default='ISOLAR_SMG_II_11K', 
+    parser.add_argument('--model', choices=list(MODEL_CONFIGS.keys()), default='ISOLAR_SMG_II_4K', 
                        help='Inverter model (default: ISOLAR_SMG_II_11K)')
     
     args = parser.parse_args()
