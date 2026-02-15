@@ -1,0 +1,16 @@
+[Unit]
+Description=Easun Inverter Zabbix Monitor
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/easunpy
+ExecStart=/usr/bin/python3.10 /home/pi/easunpy/zabbix_monitor.py --inverter-ip 10.1.31.9 --model ISOLAR_SMG_II_4K --interval 30
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
