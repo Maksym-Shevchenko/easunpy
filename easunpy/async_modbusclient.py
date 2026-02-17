@@ -41,7 +41,7 @@ class AsyncModbusClient:
         self._writer = None
         self._connection_established = False
         self._last_activity = 0
-        self._connection_timeout = 30  # Timeout in seconds before considering connection stale
+        self._connection_timeout = 60  # Timeout in seconds before considering connection stale
 
     async def _cleanup_server(self):
         """Cleanup server and all active connections."""
@@ -156,7 +156,7 @@ class AsyncModbusClient:
 
                 # Wait for connection with timeout
                 try:
-                    await asyncio.wait_for(self._wait_for_connection(), timeout=10)
+                    await asyncio.wait_for(self._wait_for_connection(), timeout=30)
                 except asyncio.TimeoutError:
                     logger.error("Timeout waiting for client connection")
                     await self._cleanup_server()
